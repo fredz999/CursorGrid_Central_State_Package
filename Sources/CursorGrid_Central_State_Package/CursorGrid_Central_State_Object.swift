@@ -55,7 +55,7 @@ public class CursorGrid_Central_State {
 
     public var cursor_X_Endpoint_Func_1 : ((Int)->())?
     public var cursor_X_Func_2 : ((Int)->())?
-    public var cursor_X_Func_3 : ( (Int,Int,Int,Int)->()  )?
+    public var cursor_X_Func_3 : ( (Int,Int,Int,Int)->())?
     
     public var cursor_Y_Func_1 : ((Int)->())?
     public var cursor_Y_Func_2 : ((Int)->())?
@@ -95,6 +95,7 @@ public class CursorGrid_Central_State {
         }
         if noteWritingActive == true {
             if let lclQuadRef = cursor_Y_Func_3 {
+                print("lclQuadRef activated")
                 lclQuadRef(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
             }
         }
@@ -108,6 +109,7 @@ public class CursorGrid_Central_State {
     public var update_Lower_Data_Y_Endpoint_twoo : ((Int)->())?
     public var update_Lower_Data_Y_Endpoint_three : (()->())?
     public var update_Lower_Data_Y_Endpoint_4 : ((Int)->())?
+
     
     public var retrieve_LowerY_Param_From_VSlider_Responder : (()->(Int))?
     
@@ -116,6 +118,7 @@ public class CursorGrid_Central_State {
     
         if let lclInternalFunc = retrieve_LowerY_Param_From_VSlider_Responder {
             let intParam = lclInternalFunc()
+            
             if let lclTargetFunc = update_Lower_Data_Y_Endpoint_1 {
                 lclTargetFunc(intParam)
             }
@@ -130,6 +133,10 @@ public class CursorGrid_Central_State {
             
             if let lclTargetFunc4 = update_Lower_Data_Y_Endpoint_4 {
                 lclTargetFunc4(intParam)
+            }
+            
+            if let lclNoteWriteON_EndpointFunc = noteWriteON_EndpointFunc{
+                lclNoteWriteON_EndpointFunc(intParam,intParam2,intParam3,intParam4)
             }
             
         }
