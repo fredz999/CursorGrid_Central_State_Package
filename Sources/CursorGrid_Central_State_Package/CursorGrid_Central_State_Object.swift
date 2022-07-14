@@ -95,7 +95,7 @@ public class CursorGrid_Central_State {
         }
         if noteWritingActive == true {
             if let lclQuadRef = cursor_Y_Func_3 {
-                print("lclQuadRef activated")
+                print("lclQuadRef about to go")
                 lclQuadRef(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
             }
         }
@@ -133,10 +133,6 @@ public class CursorGrid_Central_State {
             
             if let lclTargetFunc4 = update_Lower_Data_Y_Endpoint_4 {
                 lclTargetFunc4(intParam)
-            }
-            
-            if let lclNoteWriteON_EndpointFunc = noteWriteON_EndpointFunc{
-                lclNoteWriteON_EndpointFunc(intParam,intParam2,intParam3,intParam4)
             }
             
         }
