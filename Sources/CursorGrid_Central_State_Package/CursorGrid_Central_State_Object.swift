@@ -94,12 +94,11 @@ public class CursorGrid_Central_State {
             lclsingleInt_Func_2(shared_Cursor_Y_Int)
         }
         if noteWritingActive == true {
-            if let lclQuadRef = cursor_Y_Func_3 {
-//                print("line: shared_Cursor_X_Int: ",shared_Cursor_X_Int,
-//                      "shared_Cursor_Y_Int: ",shared_Cursor_Y_Int,
-//                      ",shared_Cursor_DataX_Int: ",shared_Cursor_DataX_Int,
-//                      ", shared_Cursor_DataY_Int: ",shared_Cursor_DataY_Int)
-                lclQuadRef(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
+//            if let lclQuadRef = cursor_Y_Func_3 {
+//                lclQuadRef(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
+//            }
+            if let lclCursor_X_Func_3 = cursor_X_Func_3 {
+                lclCursor_X_Func_3(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
             }
         }
     }
@@ -139,9 +138,8 @@ public class CursorGrid_Central_State {
             }
             
             if noteWritingActive == true {
-                if let lclQuadRef = cursor_X_Func_3 {
-                    print("shared_Cursor_X_Int: ",shared_Cursor_X_Int,"shared_Cursor_Y_Int: ",shared_Cursor_Y_Int,",shared_Cursor_DataX_Int: ",shared_Cursor_DataX_Int,", shared_Cursor_DataY_Int: ",shared_Cursor_DataY_Int)
-                    lclQuadRef(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
+                if let lclCursor_X_Func_3 = cursor_X_Func_3 {
+                    lclCursor_X_Func_3(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
                 }
             }
             
