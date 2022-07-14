@@ -135,9 +135,8 @@ public class CursorGrid_Central_State {
             }
             
             if noteWritingActive == true {
-                print("noteWritingActive == true got triggered")
                 if let lclQuadRef = cursor_X_Func_3 {
-                    print("noteWritingActive == true got triggered with cursor_X_Func_3")
+                    print("shared_Cursor_X_Int: ",shared_Cursor_X_Int,"shared_Cursor_Y_Int: ",shared_Cursor_Y_Int,",shared_Cursor_DataX_Int: ",shared_Cursor_DataX_Int,", shared_Cursor_DataY_Int: ",shared_Cursor_DataY_Int)
                     lclQuadRef(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
                 }
             }
