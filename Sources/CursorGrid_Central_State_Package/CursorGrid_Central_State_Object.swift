@@ -19,7 +19,6 @@ public class CursorGrid_Central_State : ObservableObject{
 
     public var shared_Cursor_YData_Lowest : Int = 0
 
-    
     public init(){}
     
     public func change_Shared_Cursor_YData_Lowest(newLowestY:Int){
@@ -111,9 +110,9 @@ public class CursorGrid_Central_State : ObservableObject{
     public var update_Lower_Data_Y_Endpoint_twoo : ((Int)->())?
     public var update_Lower_Data_Y_Endpoint_three : (()->())?
     public var update_Lower_Data_Y_Endpoint_4 : ((Int)->())?
-
-    
     public var retrieve_LowerY_Param_From_VSlider_Responder : (()->(Int))?
+    
+    //func updatePositionInformation(new_CursorX_Param : Int, new_CursorY_Param : Int, new_Data_X_Param : Int, new_Data_Y_Param : Int ){
     
     
     public func trigger_Data_Update(){
