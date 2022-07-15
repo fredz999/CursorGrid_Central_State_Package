@@ -53,31 +53,15 @@ public class CursorGrid_Central_State {
         }
     }
 
-    public var cursor_X_Endpoint_Func_1 : ((Int)->())?
+    //public var cursor_X_Endpoint_Func_1 : ((Int)->())?
     public var cursor_X_Func_2 : ((Int)->())?
     public var cursor_X_Func_3 : ( (Int,Int,Int,Int)->())?
     
     public var cursor_Y_Func_1 : ((Int)->())?
     public var cursor_Y_Func_2 : ((Int)->())?
     public var cursor_Y_Func_3 : ( (Int,Int,Int,Int)->())?
-
     
-    public func set_Shared_CursorX_Int(new_Cursor_X_Int: Int){
-        print("set_Shared_CursorX_Int")
-        shared_Cursor_X_Int = new_Cursor_X_Int
-        shared_Cursor_DataX_Int = shared_Cursor_X_Int
-    }
-    
-    public func set_Shared_CursorY_Int(new_Cursor_Y_Int: Int){
-        print("set_Shared_CursorY_Int")
-        shared_Cursor_Y_Int = new_Cursor_Y_Int
-        set_Shared_CursorY_Data_Int()
-    }
-    
-    public func set_Shared_CursorY_Data_Int(){
-        shared_Cursor_DataY_Int = shared_Cursor_Y_Int + shared_Cursor_YData_Lowest
-    }
-    
+    //=======================================================================================================================
     public func incoming_Cursor_X_Int_Update(new_Cursor_X_Int: Int) {
         set_Shared_CursorX_Int(new_Cursor_X_Int: new_Cursor_X_Int)
         if let lclsingleInt_Func_2 = cursor_X_Func_2 {
@@ -89,7 +73,12 @@ public class CursorGrid_Central_State {
             }
         }
     }
-
+    
+    public func set_Shared_CursorX_Int(new_Cursor_X_Int: Int){
+        shared_Cursor_X_Int = new_Cursor_X_Int
+        shared_Cursor_DataX_Int = shared_Cursor_X_Int
+    }
+    //=======================================================================================================================
     public func incoming_Cursor_Y_Int_Update(new_Cursor_Y_Int: Int) {
         set_Shared_CursorY_Int(new_Cursor_Y_Int: new_Cursor_Y_Int)
         if let lclsingleInt_Func_2 = cursor_Y_Func_2 {
@@ -101,6 +90,16 @@ public class CursorGrid_Central_State {
             }
         }
     }
+    //=======================================================================================================================
+    public func set_Shared_CursorY_Int(new_Cursor_Y_Int: Int){
+        shared_Cursor_Y_Int = new_Cursor_Y_Int
+        set_Shared_CursorY_Data_Int()
+    }
+    
+    public func set_Shared_CursorY_Data_Int(){
+        shared_Cursor_DataY_Int = shared_Cursor_Y_Int + shared_Cursor_YData_Lowest
+    }
+    
     
     public var noteWriteON_ParamSourceFunc : (()->(Int,Int,Int,Int))?
     public var noteWriteON_EndpointFunc : ((Int,Int,Int,Int)->())?
