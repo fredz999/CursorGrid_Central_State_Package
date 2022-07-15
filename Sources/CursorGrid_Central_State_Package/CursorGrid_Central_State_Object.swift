@@ -59,15 +59,17 @@ public class CursorGrid_Central_State {
     
     public var cursor_Y_Func_1 : ((Int)->())?
     public var cursor_Y_Func_2 : ((Int)->())?
-    public var cursor_Y_Func_3 : ( (Int,Int,Int,Int)->()  )?
+    public var cursor_Y_Func_3 : ( (Int,Int,Int,Int)->())?
 
     
     public func set_Shared_CursorX_Int(new_Cursor_X_Int: Int){
+        print("set_Shared_CursorX_Int")
         shared_Cursor_X_Int = new_Cursor_X_Int
         shared_Cursor_DataX_Int = shared_Cursor_X_Int
     }
     
     public func set_Shared_CursorY_Int(new_Cursor_Y_Int: Int){
+        print("set_Shared_CursorY_Int")
         shared_Cursor_Y_Int = new_Cursor_Y_Int
         set_Shared_CursorY_Data_Int()
     }
@@ -144,7 +146,6 @@ public class CursorGrid_Central_State {
     }
     
     public func returnFourCursorThings()->(Int,Int,Int,Int){
-        print("fourthings called")
         let retval : (Int,Int,Int,Int) = (shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
         return retval
     }
