@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 import Combine
 
-public class CursorGrid_Central_State {
+public class CursorGrid_Central_State : ObservableObject{
     
-    public var shared_Cursor_X_Int : Int = 0
-    public var shared_Cursor_Y_Int : Int = 0
+    @Published public var shared_Cursor_X_Int : Int = 0
+    @Published public var shared_Cursor_Y_Int : Int = 0
     
-    public var shared_Cursor_DataX_Int : Int = 0
-    public var shared_Cursor_DataY_Int : Int = 0
+    @Published public var shared_Cursor_DataX_Int : Int = 0
+    @Published public var shared_Cursor_DataY_Int : Int = 0
 
     public var shared_Cursor_YData_Lowest : Int = 0
 
@@ -59,7 +59,7 @@ public class CursorGrid_Central_State {
     
     public var cursor_Y_Func_1 : ((Int)->())?
     public var cursor_Y_Func_2 : ((Int)->())?
-    public var cursor_Y_Func_3 : ( (Int,Int,Int,Int)->())?
+    public var cursor_Y_Func_3 : ((Int,Int,Int,Int)->())?
     
     //=======================================================================================================================
     public func incoming_Cursor_X_Int_Update(new_Cursor_X_Int: Int) {
@@ -90,7 +90,7 @@ public class CursorGrid_Central_State {
             }
         }
     }
-    //=======================================================================================================================
+    
     public func set_Shared_CursorY_Int(new_Cursor_Y_Int: Int){
         shared_Cursor_Y_Int = new_Cursor_Y_Int
         set_Shared_CursorY_Data_Int()
@@ -99,6 +99,8 @@ public class CursorGrid_Central_State {
     public func set_Shared_CursorY_Data_Int(){
         shared_Cursor_DataY_Int = shared_Cursor_Y_Int + shared_Cursor_YData_Lowest
     }
+    //=======================================================================================================================
+    
     
     
     public var noteWriteON_ParamSourceFunc : (()->(Int,Int,Int,Int))?
