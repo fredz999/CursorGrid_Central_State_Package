@@ -144,6 +144,7 @@ public class CursorGrid_Central_State {
     }
     
     public func returnFourCursorThings()->(Int,Int,Int,Int){
+        print("fourthings called")
         let retval : (Int,Int,Int,Int) = (shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
         return retval
     }
