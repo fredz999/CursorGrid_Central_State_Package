@@ -71,6 +71,9 @@ public class CursorGrid_Central_State : ObservableObject{
                 lclQuadRef(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
             }
         }
+        if let lclPosUpdate = updateVisualPosition {
+            lclPosUpdate(new_Cursor_X_Int,shared_Cursor_Y_Int)
+        }
     }
     
     public func set_Shared_CursorX_Int(new_Cursor_X_Int: Int){
@@ -87,6 +90,9 @@ public class CursorGrid_Central_State : ObservableObject{
             if let lclCursor_Y_Func_3 = cursor_Y_Func_3 {
                 lclCursor_Y_Func_3(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
             }
+        }
+        if let lclPosUpdate = updateVisualPosition {
+            lclPosUpdate(shared_Cursor_X_Int,new_Cursor_Y_Int)
         }
     }
     
@@ -149,5 +155,7 @@ public class CursorGrid_Central_State : ObservableObject{
         let retval : (Int,Int,Int,Int) = (shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
         return retval
     }
+    
+    public var updateVisualPosition : ((Int,Int)->())?
 
 }
