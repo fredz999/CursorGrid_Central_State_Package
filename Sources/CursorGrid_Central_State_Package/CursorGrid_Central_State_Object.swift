@@ -53,7 +53,6 @@ public class CursorGrid_Central_State : ObservableObject{
     }
 
     public var cursorLayer_X_Update : ((Int)->())?
-    //potential_Note_Layer_Store.updatePositionInformation
     public var potentialLayer_X_Update : ( (Int,Int,Int,Int)->())?
     
     public var cursor_Y_Func_1 : ((Int)->())?
