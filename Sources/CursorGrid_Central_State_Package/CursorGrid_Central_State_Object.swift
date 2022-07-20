@@ -52,9 +52,9 @@ public class CursorGrid_Central_State : ObservableObject{
         }
     }
 
-    //public var cursor_X_Endpoint_Func_1 : ((Int)->())?
-    public var cursor_X_Func_2 : ((Int)->())?
-    public var cursor_X_Func_3 : ( (Int,Int,Int,Int)->())?
+    public var cursorLayer_X_Update : ((Int)->())?
+    //potential_Note_Layer_Store.updatePositionInformation
+    public var potentialLayer_X_Update : ( (Int,Int,Int,Int)->())?
     
     public var cursor_Y_Func_1 : ((Int)->())?
     public var cursor_Y_Func_2 : ((Int)->())?
@@ -63,11 +63,11 @@ public class CursorGrid_Central_State : ObservableObject{
     //=======================================================================================================================
     public func incoming_Cursor_X_Int_Update(new_Cursor_X_Int: Int) {
         set_Shared_CursorX_Int(new_Cursor_X_Int: new_Cursor_X_Int)
-        if let lclsingleInt_Func_2 = cursor_X_Func_2 {
+        if let lclsingleInt_Func_2 = cursorLayer_X_Update {
             lclsingleInt_Func_2(shared_Cursor_X_Int)
         }
         if noteWritingActive == true {
-            if let lclQuadRef = cursor_X_Func_3 {
+            if let lclQuadRef = potentialLayer_X_Update {
                 lclQuadRef(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
             }
         }
