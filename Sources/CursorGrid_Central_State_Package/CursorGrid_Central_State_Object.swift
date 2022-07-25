@@ -25,8 +25,7 @@ public class CursorGrid_Central_State : ObservableObject{
     }
 
     public var cursorLayer_X_Update : ((Int)->())?
-    //public var cursor_Y_Func_1 : ((Int)->())?
-    public var cursor_Y_Func_2 : ((Int)->())?
+    public var cursor_Y_Update_Func : ((Int)->())?
     
     //=======================================================================================================================
     public func incoming_Cursor_X_Int_Update(new_Cursor_X_Int: Int) {
@@ -48,7 +47,7 @@ public class CursorGrid_Central_State : ObservableObject{
 
     public func incoming_Cursor_Y_Int_Update(new_Cursor_Y_Int: Int) {
         set_Shared_CursorY_Int(new_Cursor_Y_Int: new_Cursor_Y_Int)
-        if let lclsingleInt_Func_2 = cursor_Y_Func_2 {
+        if let lclsingleInt_Func_2 = cursor_Y_Update_Func {
             lclsingleInt_Func_2(shared_Cursor_Y_Int)
         }
         if let lclPosUpdate = updateVisualPosition {
