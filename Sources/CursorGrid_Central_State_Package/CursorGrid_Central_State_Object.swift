@@ -65,11 +65,6 @@ public class CursorGrid_Central_State : ObservableObject{
     }
     //=======================================================================================================================
     
-    
-    
-    public var noteWriteON_ParamSourceFunc : (()->(Int,Int,Int,Int))?
-    public var noteWriteOFF_EndpointFunc : (()->())?
-    
     public var update_Lower_Data_Y_Endpoint_1 : ((Int)->())?
     public var update_Lower_Data_Y_Endpoint_twoo : ((Int)->())?
     public var update_Lower_Data_Y_Endpoint_three : (()->())?
@@ -100,10 +95,10 @@ public class CursorGrid_Central_State : ObservableObject{
         }
     }
     
-    public func returnFourCursorThings()->(Int,Int,Int,Int){
-        let retval : (Int,Int,Int,Int) = (shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
-        return retval
-    }
+//    public func returnFourCursorThings()->(Int,Int,Int,Int){
+//        let retval : (Int,Int,Int,Int) = (shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
+//        return retval
+//    }
     
     public var updateVisualPosition : ((Int,Int)->())?
 
