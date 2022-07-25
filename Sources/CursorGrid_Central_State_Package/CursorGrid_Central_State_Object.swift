@@ -13,7 +13,6 @@ public class CursorGrid_Central_State : ObservableObject{
     
     @Published public var shared_Cursor_X_Int : Int = 0
     @Published public var shared_Cursor_Y_Int : Int = 0
-    
     @Published public var shared_Cursor_DataX_Int : Int = 0
     @Published public var shared_Cursor_DataY_Int : Int = 0
 
@@ -26,15 +25,13 @@ public class CursorGrid_Central_State : ObservableObject{
     }
 
     public var cursorLayer_X_Update : ((Int)->())?
-    //public var potentialLayer_X_Update : ( (Int,Int,Int,Int)->())?
-    
-    public var cursor_Y_Func_1 : ((Int)->())?
+    //public var cursor_Y_Func_1 : ((Int)->())?
     public var cursor_Y_Func_2 : ((Int)->())?
-    //public var cursor_Y_Func_3 : ((Int,Int,Int,Int)->())?
     
     //=======================================================================================================================
     public func incoming_Cursor_X_Int_Update(new_Cursor_X_Int: Int) {
         set_Shared_CursorX_Int(new_Cursor_X_Int: new_Cursor_X_Int)
+        
         if let lclsingleInt_Func_2 = cursorLayer_X_Update {
             lclsingleInt_Func_2(shared_Cursor_X_Int)
         }
@@ -48,7 +45,7 @@ public class CursorGrid_Central_State : ObservableObject{
         shared_Cursor_X_Int = new_Cursor_X_Int
         shared_Cursor_DataX_Int = shared_Cursor_X_Int
     }
-    //=======================================================================================================================
+
     public func incoming_Cursor_Y_Int_Update(new_Cursor_Y_Int: Int) {
         set_Shared_CursorY_Int(new_Cursor_Y_Int: new_Cursor_Y_Int)
         if let lclsingleInt_Func_2 = cursor_Y_Func_2 {
@@ -72,7 +69,6 @@ public class CursorGrid_Central_State : ObservableObject{
     
     
     public var noteWriteON_ParamSourceFunc : (()->(Int,Int,Int,Int))?
-    //public var noteWriteON_EndpointFunc : ((Int,Int,Int,Int)->())?
     public var noteWriteOFF_EndpointFunc : (()->())?
     
     public var update_Lower_Data_Y_Endpoint_1 : ((Int)->())?
