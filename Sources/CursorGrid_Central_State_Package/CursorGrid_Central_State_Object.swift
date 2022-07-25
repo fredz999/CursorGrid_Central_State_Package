@@ -95,11 +95,6 @@ public class CursorGrid_Central_State : ObservableObject{
         }
     }
     
-//    public func returnFourCursorThings()->(Int,Int,Int,Int){
-//        let retval : (Int,Int,Int,Int) = (shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int)
-//        return retval
-//    }
-    
     public var updateVisualPosition : ((Int,Int)->())?
 
 }
