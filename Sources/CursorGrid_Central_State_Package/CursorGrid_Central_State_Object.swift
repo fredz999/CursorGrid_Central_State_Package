@@ -24,40 +24,13 @@ public class CursorGrid_Central_State : ObservableObject{
     public func change_Shared_Cursor_YData_Lowest(newLowestY:Int){
         shared_Cursor_YData_Lowest = newLowestY
     }
-    
-//    public var noteWritingActive : Bool = false {
-//        didSet {
-//            if noteWritingActive == true {
-//                if let lclNoteWriteParamSourceFunc = noteWriteON_ParamSourceFunc {
-//                    let quadParam = lclNoteWriteParamSourceFunc()
-//                    if let lclNoteWriteOnEndPointFunc = noteWriteON_EndpointFunc {
-//                        lclNoteWriteOnEndPointFunc(quadParam.0,quadParam.1,quadParam.2,quadParam.3)
-//                    }
-//                }
-//            }
-//            else if noteWritingActive == false {
-//                if let lclNoteOffEndpoint = noteWriteOFF_EndpointFunc{
-//                    lclNoteOffEndpoint()
-//                }
-//            }
-//        }
-//    }
-    
-//    public func incoming_NoteWriting_Active_Update(){
-//        if noteWritingActive == true {
-//            noteWritingActive = false
-//        }
-//        else if noteWritingActive == false{
-//            noteWritingActive = true
-//        }
-//    }
 
     public var cursorLayer_X_Update : ((Int)->())?
-    public var potentialLayer_X_Update : ( (Int,Int,Int,Int)->())?
+    //public var potentialLayer_X_Update : ( (Int,Int,Int,Int)->())?
     
     public var cursor_Y_Func_1 : ((Int)->())?
     public var cursor_Y_Func_2 : ((Int)->())?
-    public var cursor_Y_Func_3 : ((Int,Int,Int,Int)->())?
+    //public var cursor_Y_Func_3 : ((Int,Int,Int,Int)->())?
     
     //=======================================================================================================================
     public func incoming_Cursor_X_Int_Update(new_Cursor_X_Int: Int) {
@@ -65,11 +38,7 @@ public class CursorGrid_Central_State : ObservableObject{
         if let lclsingleInt_Func_2 = cursorLayer_X_Update {
             lclsingleInt_Func_2(shared_Cursor_X_Int)
         }
-//        if noteWritingActive == true {
-//            if let lclQuadRef = potentialLayer_X_Update {
-//                lclQuadRef(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
-//            }
-//        }
+
         if let lclPosUpdate = updateVisualPosition {
             lclPosUpdate(new_Cursor_X_Int,shared_Cursor_Y_Int)
         }
@@ -85,11 +54,6 @@ public class CursorGrid_Central_State : ObservableObject{
         if let lclsingleInt_Func_2 = cursor_Y_Func_2 {
             lclsingleInt_Func_2(shared_Cursor_Y_Int)
         }
-//        if noteWritingActive == true {
-//            if let lclCursor_Y_Func_3 = cursor_Y_Func_3 {
-//                lclCursor_Y_Func_3(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
-//            }
-//        }
         if let lclPosUpdate = updateVisualPosition {
             lclPosUpdate(shared_Cursor_X_Int,new_Cursor_Y_Int)
         }
@@ -108,7 +72,7 @@ public class CursorGrid_Central_State : ObservableObject{
     
     
     public var noteWriteON_ParamSourceFunc : (()->(Int,Int,Int,Int))?
-    public var noteWriteON_EndpointFunc : ((Int,Int,Int,Int)->())?
+    //public var noteWriteON_EndpointFunc : ((Int,Int,Int,Int)->())?
     public var noteWriteOFF_EndpointFunc : (()->())?
     
     public var update_Lower_Data_Y_Endpoint_1 : ((Int)->())?
@@ -116,9 +80,6 @@ public class CursorGrid_Central_State : ObservableObject{
     public var update_Lower_Data_Y_Endpoint_three : (()->())?
     public var update_Lower_Data_Y_Endpoint_4 : ((Int)->())?
     public var retrieve_LowerY_Param_From_VSlider_Responder : (()->(Int))?
-    
-    //func updatePositionInformation(new_CursorX_Param : Int, new_CursorY_Param : Int, new_Data_X_Param : Int, new_Data_Y_Param : Int ){
-    
     
     public func trigger_Data_Update(){
     
@@ -140,12 +101,6 @@ public class CursorGrid_Central_State : ObservableObject{
             if let lclTargetFunc4 = update_Lower_Data_Y_Endpoint_4 {
                 lclTargetFunc4(intParam)
             }
-            
-//            if noteWritingActive == true {
-//                if let lclCursor_Y_Func_3 = cursor_Y_Func_3 {
-//                    lclCursor_Y_Func_3(shared_Cursor_X_Int,shared_Cursor_Y_Int,shared_Cursor_DataX_Int,shared_Cursor_DataY_Int )
-//                }
-//            }
             
         }
     }
